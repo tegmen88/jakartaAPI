@@ -44,4 +44,17 @@ public class BookService {
 
     }
 
+    @Transactional(Transactional.TxType.REQUIRED) 
+    public Book updateBook(Long id, Book updatedBook) {
+        Book existingBook = entityManager.find(Book.class, id);
+            existingBook.setTitle(updatedBook.getTitle());
+            existingBook.setAuthor(updatedBook.getAuthor());
+            existingBook.setIsbn(updatedBook.getIsbn());
+            existingBook.setYear(updatedBook.getYear());
+            existingBook.setDescription(updatedBook.getDescription());
+            existingBook.setComment(updatedBook.getComment());
+            existingBook.setGenre(updatedBook.getGenre());
+        return entityManager.merge(existingBook);
+    }
+
 }
