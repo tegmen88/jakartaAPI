@@ -64,6 +64,7 @@ public class BookResource {
 //    }
 
    @DELETE
+   @Path("/{id}")
    public Response deleteBook(@PathParam("id") @Min(1) Long id) {
         bookService.deleteById(id);
         return Response.noContent().build();

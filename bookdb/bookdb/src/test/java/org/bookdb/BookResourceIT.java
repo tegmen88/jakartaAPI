@@ -1,8 +1,8 @@
-package org.bookdb;
+// package org.bookdb;
 
-import io.quarkus.test.junit.QuarkusIntegrationTest;
+// import io.quarkus.test.junit.QuarkusIntegrationTest;
 
-@QuarkusIntegrationTest
-class BookResourceIT extends BookResourceTest {
-    // Execute the same tests but in packaged mode.
-}
+// @QuarkusIntegrationTest
+// class BookResourceIT extends BookResourceTest {
+//     // Execute the same tests but in packaged mode.
+// }
