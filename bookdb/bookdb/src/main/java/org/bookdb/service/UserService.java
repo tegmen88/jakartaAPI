@@ -3,7 +3,6 @@ package org.bookdb.service;
 import java.util.List;
 import java.util.UUID;
 
-import org.bookdb.model.Book;
 import org.bookdb.model.User;
 
 import jakarta.enterprise.context.ApplicationScoped;
