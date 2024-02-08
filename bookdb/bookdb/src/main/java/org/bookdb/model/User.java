@@ -3,11 +3,15 @@ package org.bookdb.model;
 import java.util.UUID;
 import jakarta.persistence.Table;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 
 @Entity
 @Table(name="t_user")
 public class User{
 
+    @Id
+    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private Long id;
     private UUID apiKey;
     private String userName;
