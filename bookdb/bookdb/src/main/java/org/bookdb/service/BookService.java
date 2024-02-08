@@ -1,7 +1,9 @@
-package org.bookdb;
+package org.bookdb.service;
 
 import java.util.List;
 import java.util.UUID;
+
+import org.bookdb.model.Book;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;

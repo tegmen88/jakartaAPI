@@ -1,4 +1,4 @@
-package org.bookdb;
+package org.bookdb.model;
 
 import java.util.UUID;
 

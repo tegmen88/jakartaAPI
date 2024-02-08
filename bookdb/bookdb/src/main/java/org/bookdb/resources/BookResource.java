@@ -1,6 +1,10 @@
-package org.bookdb;
+package org.bookdb.resources;
 
 import java.util.List;
+
+import org.bookdb.model.Book;
+import org.bookdb.service.BookService;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 

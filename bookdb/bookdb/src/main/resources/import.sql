@@ -5,6 +5,19 @@
 -- insert into myentity (id, field) values(3, 'field-3');
 -- alter sequence myentity_seq restart with 4;
 
+insert into t_table (apiKey, userName, password) values ('95040bdb-2b83-47b7-a11a-73ad8632175a', 'test', '123456');
+insert into t_table (apiKey, userName, password) values ('95040bdb-2b83-47b7-a11a-73ad8632175a', 'gmcgarrity0', 'dB8`A*0~A');
+insert into t_table (apiKey, userName, password) values ('25106ce5-0a93-4a09-b9f0-3ff83030f3c6', 'cmeaders1', 'lE4(6~W5cIy8s<@S');
+insert into t_table (apiKey, userName, password) values ('bba6815d-ef8e-434f-a1d0-783d3a020e37', 'acronkshaw2', 'rB7>tZ{sv)yC.lI');
+insert into t_table (apiKey, userName, password) values ('9a7be1e9-6bde-4e16-b56b-4bcd3c579a7d', 'cesche3', 'oW1&!_To}9@''zt8');
+insert into t_table (apiKey, userName, password) values ('47115a46-6f7f-4506-9230-c9f6b74d27fc', 'jeardley4', 'hW9#!LOBu>{9@jf');
+insert into t_table (apiKey, userName, password) values ('b280a2b2-f3c0-43f8-8886-2eaf0edb6300', 'lkaasmann5', 'aB0=(YbZ');
+insert into t_table (apiKey, userName, password) values ('ab09d445-064b-47c4-81dd-7370df698366', 'olighterness6', 'bG2".iuyjO');
+insert into t_table (apiKey, userName, password) values ('ed0e7ec3-173c-41d1-8b59-d73f903a3773', 'cedlin7', 'xI8$\''B<zy+KQXA');
+insert into t_table (apiKey, userName, password) values ('0b2517e7-a3b6-4872-baa2-2f83c132de05', 'rnellies8', 'zB0''9yvDR.H');
+insert into t_table (apiKey, userName, password) values ('9d62da8f-6ef6-4303-b3cc-3d73a775460a', 'mtrim9', 'nK3(XY0CN|vj');
+
+
 insert into t_book (author, title, isbn, genre, description, comment, year) values ('Swen McDavitt', 'The Catcher in the Rye', '7be2fc25-56a1-4a26-9a29-8dd372ed2fe5', 'action', 'Consectetur adipiscing elit', 'Well done!', 1938);
 insert into t_book (author, title, isbn, genre, description, comment, year) values ('Mayer Muslim', 'To Kill a Mockingbird', '9bf512d3-1c04-4479-a602-dfef57154a7c', 'romance', 'Sed do eiusmod tempor incididunt', 'Keep up the good work!', 1945);
 insert into t_book (author, title, isbn, genre, description, comment, year) values ('Abie Colvine', '1984', '8e6a930c-2d41-496b-b85d-1988da862c16', 'comedy', 'Ut labore et dolore magna aliqua', 'Impressive!', 2019);
