@@ -5,8 +5,8 @@ import java.util.UUID;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name="t_book")
@@ -26,6 +26,10 @@ public class Book{
     // @Size(min = 2, max = 500)
     private String comment;
     private int year;
+
+    // Främmande nyckelrelationen till User
+    @ManyToOne
+    private User user;
 
     public Long getId() {
         return id;
@@ -76,4 +80,11 @@ public class Book{
         this.genre = genre;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

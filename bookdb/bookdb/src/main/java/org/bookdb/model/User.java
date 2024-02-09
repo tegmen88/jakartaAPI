@@ -1,10 +1,12 @@
 package org.bookdb.model;
 
+import java.util.List;
 import java.util.UUID;
 import jakarta.persistence.Table;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 @Table(name="t_user")
@@ -16,6 +18,10 @@ public class User{
     private UUID apiKey;
     private String userName;
     private String password;
+
+    // Skapar en user-kolumn i t_book
+    @OneToMany(mappedBy = "user")
+    private List<Book> books;
 
     public Long getId() {
         return id;
@@ -40,5 +46,13 @@ public class User{
     }
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 }
