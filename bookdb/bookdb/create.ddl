@@ -1,12 +1,4 @@
 
-    create table Comment (
-        book_id bigint,
-        id bigserial not null,
-        user_id bigint,
-        text varchar(255),
-        primary key (id)
-    );
-
     create table t_book (
         year integer not null,
         id bigserial not null,
@@ -20,6 +12,14 @@
         primary key (id)
     );
 
+    create table t_comment (
+        book_id bigint,
+        id bigserial not null,
+        user_id bigint,
+        text varchar(255),
+        primary key (id)
+    );
+
     create table t_user (
         id bigserial not null,
         apiKey uuid,
@@ -28,18 +28,18 @@
         primary key (id)
     );
 
-    alter table if exists Comment 
-       add constraint FKtjtoe4kad7pxlw1ge8kv27jme 
-       foreign key (book_id) 
-       references t_book;
-
-    alter table if exists Comment 
-       add constraint FK8ovt73g0cn7ayj7v7o7brmcg3 
+    alter table if exists t_book 
+       add constraint FKqo20ku8ut6rn3g6x0e8oeur30 
        foreign key (user_id) 
        references t_user;
 
-    alter table if exists t_book 
-       add constraint FKqo20ku8ut6rn3g6x0e8oeur30 
+    alter table if exists t_comment 
+       add constraint FKo96wuai2oga7hdy2yqv11iv45 
+       foreign key (book_id) 
+       references t_book;
+
+    alter table if exists t_comment 
+       add constraint FKtamaoacctq4qpko6bvtv0ke1p 
        foreign key (user_id) 
        references t_user;
 insert into t_user (apiKey, userName, password) values ('765a794f-6810-41fa-8a8c-edbcabebccd8', 'mmeldrum0', 'zU8&B0dQ');

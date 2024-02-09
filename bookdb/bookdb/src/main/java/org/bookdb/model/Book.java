@@ -28,6 +28,7 @@ public class Book{
     private String comment;
     private int year;
 
+    // Skapa främmande nyckel
     @ManyToOne
     private User user;
 
