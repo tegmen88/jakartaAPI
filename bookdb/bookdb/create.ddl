@@ -43,15 +43,15 @@
        foreign key (user_id) 
        references t_user;
 insert into t_user (apiKey, userName, password) values ('765a794f-6810-41fa-8a8c-edbcabebccd8', 'mmeldrum0', 'zU8&B0dQ');
-insert into t_user (apiKey, userName, password) values ('7dde9fba-9105-422b-93ca-d34fb926423e', 'relmes1', 'hJ4,)iI<N()?Ay');
-insert into t_user (apiKey, userName, password) values ('5d1671f2-5174-4e72-b797-17090e6c4741', 'lmackessock2', 'zT3~0RQ<1eC$G4');
+insert into t_user (apiKey, userName, password) values ('7dde9fba-9105-422b-93ca-d34fb926423e', 'relmes1', 'hJ4iI<N?Ay');
+insert into t_user (apiKey, userName, password) values ('5d1671f2-5174-4e72-b797-17090e6c4741', 'lmackessock2', 'zT3~0RQ<1eCG4');
 insert into t_user (apiKey, userName, password) values ('e83bec68-5972-415b-bef4-70ebe78daae5', 'cdusting3', 'cJ8_HW$SRT');
 insert into t_user (apiKey, userName, password) values ('de45e1fd-fcab-41f6-8f58-51d9df0f83a3', 'spresswell4', 'uM7!tJ!#&zGM');
 insert into t_user (apiKey, userName, password) values ('7eef0099-db96-4840-ba65-8a2870151c7d', 'hdillestone5', 'cP3%?L2z0z3S7lF');
 insert into t_user (apiKey, userName, password) values ('8e32ed2a-639f-4e71-87b2-a678e90d8b17', 'aminney6', 'wT6&hIx?');
-insert into t_user (apiKey, userName, password) values ('46d69285-0ce9-459f-9f8b-fdf752c8b811', 'tgwilym7', 'yU2%"!bHu');
+insert into t_user (apiKey, userName, password) values ('46d69285-0ce9-459f-9f8b-fdf752c8b811', 'tgwilym7', 'yU2"!bHu');
 insert into t_user (apiKey, userName, password) values ('ad391bf9-be6e-4a67-b9ae-260b0e0f8ab5', 'cjobbings8', 'wC8&v5n&w');
-insert into t_user (apiKey, userName, password) values ('bdbb5449-1284-455c-aa6d-760f64882630', 'sgullberg9', 'nD6{HSMJT_#G');
+insert into t_user (apiKey, userName, password) values ('bdbb5449-1284-455c-aa6d-760f64882630', 'sgullberg9', 'nD6HSMJT_#G');
 insert into t_book (author, title, isbn, genre, description, comment, year) values ('Swen McDavitt', 'The Catcher in the Rye', '7be2fc25-56a1-4a26-9a29-8dd372ed2fe5', 'action', 'Consectetur adipiscing elit', 'Well done!', 1938);
 insert into t_book (author, title, isbn, genre, description, comment, year) values ('Mayer Muslim', 'To Kill a Mockingbird', '9bf512d3-1c04-4479-a602-dfef57154a7c', 'romance', 'Sed do eiusmod tempor incididunt', 'Keep up the good work!', 1945);
 insert into t_book (author, title, isbn, genre, description, comment, year) values ('Abie Colvine', '1984', '8e6a930c-2d41-496b-b85d-1988da862c16', 'comedy', 'Ut labore et dolore magna aliqua', 'Impressive!', 2019);
