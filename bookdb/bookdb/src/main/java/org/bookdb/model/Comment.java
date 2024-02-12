@@ -1,9 +1,12 @@
 package org.bookdb.model;
 
+import jakarta.json.bind.annotation.JsonbTransient;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -17,6 +20,7 @@ public class Comment {
     private String text;
 
     @ManyToOne
+    @JsonbTransient
     private User user;
 
     @ManyToOne

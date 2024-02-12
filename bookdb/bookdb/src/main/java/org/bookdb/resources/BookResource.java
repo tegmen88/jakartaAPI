@@ -3,7 +3,9 @@ package org.bookdb.resources;
 import java.util.List;
 
 import org.bookdb.model.Book;
+import org.bookdb.model.Comment;
 import org.bookdb.service.BookService;
+import org.bookdb.service.CommentService;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -29,6 +31,8 @@ public class BookResource {
     @Inject
     BookService bookService;
 
+   
+
     @GET
     public Response getAllBooks() {
         List<Book> books = bookService.findAll();
@@ -44,6 +48,7 @@ public class BookResource {
    @Path("/{id}")
    public Response getBook(@PathParam("id") @Min(1) Long id) {
        Book book = bookService.findById(id);
+       
        return Response.ok(book).build();
    }
 
