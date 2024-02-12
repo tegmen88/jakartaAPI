@@ -51,7 +51,7 @@ public class UserService {
         User existingUser = entityManager.find(User.class, id);
         existingUser.setUserName(existingUser.getUserName());
         existingUser.setPassword(existingUser.getPassword());
-;
+
         return entityManager.merge(existingUser);
     }
 
