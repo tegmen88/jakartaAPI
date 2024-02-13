@@ -50,7 +50,7 @@ public class CommentResource {
 
 
             return Response.status(Response.Status.BAD_REQUEST)
-                           .entity("Null: Comment fungerar inte!")
+                           .entity("Null: Lägga till comment fungerar inte!")
                            .build();
         }
 
