@@ -50,7 +50,7 @@ public class CommentResource {
 
 
             return Response.status(Response.Status.BAD_REQUEST)
-                           .entity("Comment fungerar inte!")
+                           .entity("Null: Comment fungerar inte!")
                            .build();
         }
 
@@ -71,7 +71,7 @@ public class CommentResource {
         Comment comment = commentService.findById(id);
         
         if (comment == null) {
-            return Response.status(Response.Status.NOT_FOUND).build();
+            return Response.status(Response.Status.NOT_FOUND).entity("Null: Kommentaren finns inte").build();
         }
         return Response.ok(comment).build();
     }
@@ -92,7 +92,7 @@ public class CommentResource {
         Comment comment = commentService.update(id, updatedComment);
 
         if (comment == null) {
-            return Response.status(Response.Status.NOT_FOUND).build();
+            return Response.status(Response.Status.NOT_FOUND).entity("Null: Går inte uppdatera innehållet av objektet").build();
         }
         return Response.ok(comment).build();
     }
