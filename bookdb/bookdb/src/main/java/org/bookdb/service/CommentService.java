@@ -29,21 +29,39 @@ public class CommentService{
     }
 
     // find one comment
+    public Comment findById(Long id){
+        return entityManager.find(Comment.class, id);
+    }
 
 
     // create
     @Transactional(Transactional.TxType.REQUIRED) 
     public Comment addComment(Comment comment){
-       
-        
-        
         entityManager.persist(comment);
         return comment;
     }
 
 
     // delete
+    @Transactional(Transactional.TxType.REQUIRED)
+    public void delete(Long id){
+        Comment comment = entityManager.find(Comment.class, id);
+        if (comment != null) {
+            entityManager.remove(comment);
+        }
+    }
 
 
     // patch
+    @Transactional(Transactional.TxType.REQUIRED)
+    public Comment update(Long id, Comment updatedComment){
+        Comment comment = entityManager.find(Comment.class, id);
+
+        if (comment != null) {
+            comment.setText(updatedComment.getText());
+            return entityManager.merge(comment);
+        }
+        return null;
+    }
+
 }
