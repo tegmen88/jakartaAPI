@@ -20,7 +20,6 @@ public class Comment {
     private String text;
 
     @ManyToOne
-    @JsonbTransient
     private User user;
 
     @ManyToOne

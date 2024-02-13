@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.bookdb.model.Book;
 import org.bookdb.model.Comment;
+import org.bookdb.model.User;
 import org.bookdb.service.CommentService;
 
 import jakarta.inject.Inject;
@@ -41,13 +42,17 @@ public class CommentResource {
     public Response addComment(Comment comment) throws URISyntaxException   {
         
         Book book = comment.getBook();
+        User user = comment.getUser();
         if (book == null || book.getId() == null) {
+
+
             return Response.status(Response.Status.BAD_REQUEST)
                            .entity("Comment fungerar inte!")
                            .build();
         }
 
         comment.setBook(book);
+        comment.setUser(user);
 
         comment = commentService.addComment(comment);
 
