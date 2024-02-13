@@ -8,6 +8,7 @@ import org.bookdb.model.User;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.NoResultException;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 
@@ -19,6 +20,16 @@ public class UserService {
     EntityManager entityManager;
 
     UUID uuid;
+
+    public User findByApiKey(UUID apiKey) {
+        try {
+            return entityManager.createQuery("SELECT u FROM User u WHERE u.apiKey = :apiKey", User.class)
+                    .setParameter("apiKey", apiKey)
+                    .getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        }
+    }
 
     public List<User> findAll(){
         List<User> users = entityManager.createQuery("SELECT u FROM User u", User.class).getResultList();
@@ -34,8 +45,8 @@ public class UserService {
     }
 
     @Transactional(Transactional.TxType.REQUIRED) 
-    public User createUser(@Valid User user){
-        user.setApiKey(uuid.randomUUID());
+        public User createUser(@Valid User user){
+        user.setApiKey(UUID.randomUUID());
         entityManager.persist(user);
         return user;
     }
