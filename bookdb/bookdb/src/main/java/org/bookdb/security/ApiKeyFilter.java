@@ -15,7 +15,7 @@ import java.util.UUID;
 
 @Provider
 @Priority(Priorities.AUTHENTICATION)
-public class ApiKeyFilter implements ContainerRequestFilter {
+public class ApiKeyFilter implements ContainerRequestFilter {   
 
     @Inject
     UserService userService;

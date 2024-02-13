@@ -11,9 +11,12 @@ import org.bookdb.service.CommentService;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
+import jakarta.ws.rs.PATCH;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -61,14 +64,37 @@ public class CommentResource {
        
     }
 
-
     // Get one comment
-
+    @GET
+    @Path("/{id}")
+    public Response getComment(@PathParam("id") Long id) {
+        Comment comment = commentService.findById(id);
+        
+        if (comment == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        return Response.ok(comment).build();
+    }
 
     // Delete
+   @DELETE
+    @Path("/{id}")
+    public Response deleteComment(@PathParam("id") Long id) {
+        commentService.delete(id);
 
-
+        return Response.noContent().build();
+    }
 
     // Patch
-    
+    @PATCH
+    @Path("/{id}")
+    public Response updateComment(@PathParam("id") Long id, Comment updatedComment) {
+        Comment comment = commentService.update(id, updatedComment);
+
+        if (comment == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        return Response.ok(comment).build();
+    }
+
 }
