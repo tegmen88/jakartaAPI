@@ -6,6 +6,8 @@ import org.bookdb.model.Book;
 import org.bookdb.model.Comment;
 import org.bookdb.service.BookService;
 import org.bookdb.service.CommentService;
+import org.eclipse.microprofile.openapi.annotations.Operation;
+import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 
 import java.net.URI;
 import java.net.URISyntaxException;
