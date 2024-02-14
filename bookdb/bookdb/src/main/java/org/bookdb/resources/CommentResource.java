@@ -8,6 +8,8 @@ import org.bookdb.model.Book;
 import org.bookdb.model.Comment;
 import org.bookdb.model.User;
 import org.bookdb.service.CommentService;
+import org.eclipse.microprofile.openapi.annotations.Operation;
+import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
@@ -31,6 +33,19 @@ public class CommentResource {
 
     // Get all comments
     @GET
+    @Operation(summary = "Hämtar kommentarer", description = "Hämtar alla kommentarer i databasen.")
+    @APIResponse(
+        responseCode = "200",
+        description = "Kommentarer hämtades"  
+    )
+    @APIResponse(
+        responseCode = "204",
+        description = "Kommentarer hittades inte"  
+    )
+    @APIResponse(
+        responseCode = "401",
+        description = "Api-nyckel saknas eller är felaktig"  
+    )
     public Response getCommments() {
         List<Comment> comments = commentService.findAll();
 
@@ -42,6 +57,19 @@ public class CommentResource {
 
     // Post
     @POST
+    @Operation(summary = "Skapar kommentar", description = "Lägger till en kommentar i databasen.")
+    @APIResponse(
+        responseCode = "200",
+        description = "Kommentar skapad"  
+    )
+    @APIResponse(
+        responseCode = "204",
+        description = "Misslyckades att skapa kommentar"  
+    )
+    @APIResponse(
+        responseCode = "401",
+        description = "Api-nyckel saknas eller är felaktig"  
+    )
     public Response addComment(Comment comment) throws URISyntaxException   {
         
         Book book = comment.getBook();
@@ -67,6 +95,23 @@ public class CommentResource {
     // Get one comment
     @GET
     @Path("/{id}")
+    @Operation(summary = "Hämtar kommentar", description = "Hämtar en specifik kommentar med ID")
+    @APIResponse(
+        responseCode = "200",
+        description = "Kommentar hämtad"  
+    )
+    @APIResponse(
+        responseCode = "204",
+        description = "Kommentaren finns inte"  
+    )
+    @APIResponse(
+        responseCode = "401",
+        description = "Api-nyckel saknas eller är felaktig"  
+    )
+    @APIResponse(
+        responseCode = "404",
+        description = "Hittades inte"  
+    )
     public Response getComment(@PathParam("id") Long id) {
         Comment comment = commentService.findById(id);
         
@@ -79,6 +124,19 @@ public class CommentResource {
     // Delete
    @DELETE
     @Path("/{id}")
+    @Operation(summary = "Tar bort kommentar", description = "Tar bort en specifik kommentar med ID")
+    @APIResponse(
+        responseCode = "200",
+        description = "Kommentar borttagen"  
+    )
+    @APIResponse(
+        responseCode = "204",
+        description = "Kommentaren hittades inte"  
+    )
+    @APIResponse(
+        responseCode = "401",
+        description = "Api-nyckel saknas eller är felaktig"  
+    )
     public Response deleteComment(@PathParam("id") Long id) {
         commentService.delete(id);
 
@@ -88,6 +146,7 @@ public class CommentResource {
     // Patch
     @PATCH
     @Path("/{id}")
+    @Operation(summary = "Uppdaterar kommentar", description = "Uppdaterar en specifik kommentar med ID")
     public Response updateComment(@PathParam("id") Long id, Comment updatedComment) {
         Comment comment = commentService.update(id, updatedComment);
 
