@@ -114,12 +114,8 @@ public class BookResource {
    @Path("/{id}")
    @Operation(summary = "Tar bort bok", description = "Tar bort en specifik bok med ID")
    @APIResponse(
-       responseCode = "200",
-       description = "Bok borttagen"  
-   )
-   @APIResponse(
        responseCode = "204",
-       description = "Boken finns inte"  
+       description = "Boken borttagen"  
    )
    @APIResponse(
        responseCode = "401",

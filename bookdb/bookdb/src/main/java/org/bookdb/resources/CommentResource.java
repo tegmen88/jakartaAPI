@@ -128,12 +128,8 @@ public class CommentResource {
     @Path("/{id}")
     @Operation(summary = "Tar bort kommentar", description = "Tar bort en specifik kommentar med ID")
     @APIResponse(
-        responseCode = "200",
-        description = "Kommentar borttagen"  
-    )
-    @APIResponse(
         responseCode = "204",
-        description = "Kommentaren hittades inte"  
+        description = "Borttagen lyckades"  
     )
     @APIResponse(
         responseCode = "401",
