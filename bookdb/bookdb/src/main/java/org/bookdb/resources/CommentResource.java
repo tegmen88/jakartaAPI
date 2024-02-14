@@ -12,6 +12,7 @@ import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 
 import jakarta.inject.Inject;
+import jakarta.validation.constraints.Min;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
@@ -112,11 +113,12 @@ public class CommentResource {
         responseCode = "404",
         description = "Hittades inte"  
     )
-    public Response getComment(@PathParam("id") Long id) {
+
+    public Response getComment(@PathParam("id") @Min(1) Long id) {
         Comment comment = commentService.findById(id);
         
         if (comment == null) {
-            return Response.status(Response.Status.NOT_FOUND).entity("Null: Kommentaren finns inte").build();
+            return Response.status(Response.Status.NOT_FOUND).entity("404: noto found Null: Kommentaren finns inte").build();
         }
         return Response.ok(comment).build();
     }
@@ -154,6 +156,18 @@ public class CommentResource {
             return Response.status(Response.Status.NOT_FOUND).entity("Null: Går inte uppdatera innehållet av objektet").build();
         }
         return Response.ok(comment).build();
+    }
+
+    // hämtar ut en specifik kommentar för en bok
+    @GET
+    @Path("/book/{bookId}")
+    public Response getCommentsForBook(@PathParam("bookId") Long bookId) {
+        List<Comment> comments = commentService.getCommentsByBookId(bookId);
+        if (comments != null && !comments.isEmpty()) {
+            return Response.ok(comments).build();
+        } else {
+            return Response.status(Response.Status.NOT_FOUND).entity("Inga kommentarer hittades för den angivna boken.").build();
+        }
     }
 
 }
