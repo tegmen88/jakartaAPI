@@ -64,4 +64,11 @@ public class CommentService{
         return null;
     }
 
+    public List<Comment> getCommentsByBookId(Long bookId) {
+        return entityManager.createQuery("SELECT c FROM Comment c WHERE c.book.id = :bookId", Comment.class)
+                            .setParameter("bookId", bookId)
+                            .getResultList();
+    }
+    
+
 }
