@@ -119,3 +119,4 @@ Body: {
 }
 
 (OBS! På alla get och post för user kräver ingen autentisering)
+Länk till Swagger: http://localhost:8080/q/dev-ui/io.quarkus.quarkus-smallrye-openapi/swagger-ui
